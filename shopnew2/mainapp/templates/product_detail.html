@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row gx-4 gx-lg-5 align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Кофейный любитель</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'base' %}">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{{ product.category.name }}</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+                    <div class="col-md-6"><<img src="{{ product.image.url }}" class="img-fluid">></div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder">{{ product.title }}</h1>
+                        <div class="fs-5 mb-5">
+                            <span>{{ product.price }}</span>
+                        </div>
+                        <p class="lead">{{ product.description }}</p>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+<div class="row'">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}
